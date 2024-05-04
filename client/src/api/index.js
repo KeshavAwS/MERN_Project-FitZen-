@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "https://mern-project-fitzen.onrender.com",
+    baseURL: "https://mern-project-fitzen.onrender.com/api/",
 });
 
 export const UserSignUp = async (data) => API.post("/user/signup", data);
