@@ -111,7 +111,7 @@ export const getUserDashboard = async (req, res, next) => {
             },
         ]);
 
-        const pieChartData = categoryCaIories.map((category, index) => ({
+        const pieChartData = categoryCalories.map((category, index) => ({
             id: index,
             value: category.totalCaloriesBurnt,
             label: category._id,
