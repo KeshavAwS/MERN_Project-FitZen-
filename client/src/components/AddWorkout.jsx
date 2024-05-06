@@ -31,21 +31,30 @@ color: ${({ theme }) => theme.primary};
 const AddWorkout = ({ workout, setWorkout, addNewWorkout, buttonLoading }) => {
     return (
         <Card>
-            <Title>Add New Workout</Title>
-            <TextInput 
-            value={workout}
-            textArea
-            rows={10}
-            placeholder={"Enter in this format:\n#Category\nWorkout Name\nSets\nReps\nWeight\nDuration"}
-            handelChange={(e) => setWorkout(e.target.value)}/>
-            <Button
-            text="Add Workout"
-            small
-            onClick={() => addNewWorkout()}
-            isLoading={buttonLoading}
-            isDisabled={buttonLoading}
-            />
-        </Card>
+      <Title>Add New Workout</Title>
+      <TextInput
+        label="Workout"
+        textArea
+        rows={10}
+        placeholder={`Enter in this format:
+
+#Category
+-Workout Name
+-Sets
+-Reps
+-Weight
+-Duration`}
+        value={workout}
+        handelChange={(e) => setWorkout(e.target.value)}
+      />
+      <Button
+        text="Add Workout"
+        small
+        onClick={() => addNewWorkout()}
+        isLoading={buttonLoading}
+        isDisabled={buttonLoading}
+      />
+    </Card>
     );
 };
 
