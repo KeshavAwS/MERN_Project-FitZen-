@@ -7,7 +7,7 @@ import Workout from "../models/Workout.js";
 
 dotenv.config();
 
-const jwtSecret = process.env.JWT_KEY;
+const jwtSecret = `${process.env.JWT_KEY}`;
 if (!jwtSecret) {
     console.error("JWT secret key is missing in environment variables.");
     process.exit(1);
@@ -59,7 +59,7 @@ export const UserLogin = async (req, res, next) => {
             return next(createError(403, "Incorrect Password"));
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT, {
+        const token = jwt.sign({ id: user._id }, jwtSecret, {
             expiresIn: "9999 years",
         });
         return resizeBy.status(200).json({ token, user });
