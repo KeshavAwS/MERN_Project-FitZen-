@@ -164,7 +164,7 @@ const Navbar = ({ currentUser }) => {
 
         <UserContainer>
           <Avatar src={currentUser?.img}>{currentUser?.name[0]}</Avatar>
-          <TextButton onClick={() => dispatchEvent(logout())}>Logout</TextButton>
+          <TextButton onClick={() => dispatch(logout())}>Logout</TextButton>
         </UserContainer>
       </NavContainer>
     </Nav>
