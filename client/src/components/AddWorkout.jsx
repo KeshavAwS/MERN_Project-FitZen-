@@ -37,7 +37,7 @@ const AddWorkout = ({ workout, setWorkout, addNewWorkout, buttonLoading }) => {
             textArea
             rows={10}
             placeholder={"Enter in this format:\n#Category\n-Workout Name\n-Sets\n-Reps\n-Weight\n-Duration"}
-            handelChange={(e) => setWorkout(e.target)}/>
+            handelChange={(e) => setWorkout(e.target.value)}/>
             <Button
             text="Add Workout"
             small
