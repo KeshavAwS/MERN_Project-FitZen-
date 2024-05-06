@@ -37,7 +37,7 @@ export const UserRegister = async (req, res, next) => {
         const token = jwt.sign({ id: createdUser._id }, jwtSecret, {
             expiresIn: "9999 years",
         });
-        return resizeBy.status(200).json({ token, user });
+        return res.status(200).json({ token, user });
     } catch (err) {
         next(err);
     }
@@ -62,7 +62,7 @@ export const UserLogin = async (req, res, next) => {
         const token = jwt.sign({ id: user._id }, jwtSecret, {
             expiresIn: "9999 years",
         });
-        return resizeBy.status(200).json({ token, user });
+        return res.status(200).json({ token, user });
     } catch (err) {
         next(err);
     }
