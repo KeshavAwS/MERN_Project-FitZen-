@@ -179,7 +179,8 @@ export const getUserDashboard = async (req, res, next) => {
             pieChartData: pieChartData,
         });
     } catch (err) {
-        next(err);
+        // next(err);
+        console.log(err);
     }
 };
 
