@@ -75,7 +75,7 @@ const Dashboard = () => {
     -10 min`);
 
     const dashboardData = async () => {
-        setLoading(true)
+        setLoading(true);
         const token = localStorage.getItem("fitzen-app-token");
         await getDashboardDetails(token).then((res) => {
             setData(res.data);
@@ -85,7 +85,7 @@ const Dashboard = () => {
     };
 
     const getTodaysWorkout = async () => {
-        setLoading(true)
+        setLoading(true);
         const token = localStorage.getItem("fitzen-app-token");
         await getWorkouts(token, "").then((res) => {
             setTodaysWorkouts(res?.data?.todaysWorkouts);
